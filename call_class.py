@@ -2,6 +2,7 @@ import numpy as np
 from classy import Class  # 确保你已经导入Class库
 
 with open('log.txt', 'w') as f:
+    print('Writing to log.txt')
     for file_name in ['dataset/neff_train_param.npz', 'dataset/neff_val_param.npz', 'dataset/neff_test_param.npz']:
         data = np.load(file_name)
         tt = []
