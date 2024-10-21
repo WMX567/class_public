@@ -7,7 +7,7 @@ with open('log.txt', 'w') as f:
         tt = []
         ll = []
 
-        f.write(str(len(data["omega_b"])) + '\n')
+        print(len(data["omega_b"]))
 
         for i in range(len(data["omega_b"])):
             common_settings = {
