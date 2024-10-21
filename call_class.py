@@ -11,6 +11,7 @@ with open('log.txt', 'w') as f:
         print(len(data["omega_b"]))
 
         for i in range(len(data["omega_b"])):
+            print("here!")
             common_settings = {
                 'h': data['h'][i],
                 'omega_b': data['omega_b'][i],
@@ -22,6 +23,7 @@ with open('log.txt', 'w') as f:
                 'output': 'tCl'
             }
             
+            print("here!")
             f.write(str(i+1) + '\n')  # 添加换行符
             
             cosmo = Class()  # 创建Class实例
