@@ -16,9 +16,9 @@ for file_name in ['dataset/neff_train_param.npz','dataset/neff_val_param.npz', '
     tt = []
     ll = []
     
-    range_ = range(len(data["omega_b"]))
+    range_ = len(data["omega_b"])
 
-    for i in range_:
+    for i in range(range_):
       
         common_settings = {
             'h': data['h'][i],
