@@ -14,7 +14,7 @@ for file_name in ['dataset/neff_train_param.npz', 'dataset/neff_val_param.npz', 
                             'ln_A_s_1e10':data['ln_A_s_1e10'][i],
                             'n_s':data['n_s'][i],
                             'tau_reio':data['tau_reio'][i],
-                            'N_eff':data['N_eff'][i],
+                            'N_ur':data['N_eff'][i],
                             'output':'tCl'}
 
         cosmo = Class()
