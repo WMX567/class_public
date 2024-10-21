@@ -25,7 +25,7 @@ with open('log.txt', 'w') as f:
             
             print("here!")
             f.write(str(i+1) + '\n')  # 添加换行符
-            
+            print("here!")
             cosmo = Class()  # 创建Class实例
             cosmo.set(common_settings)
             cosmo.compute()
