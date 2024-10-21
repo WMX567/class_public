@@ -11,12 +11,14 @@ args = parser.parse_args()
 
 io = log.IOStream()
 
-for file_name in ['dataset/neff_train_param.npz']: # 'dataset/neff_val_param.npz', 'dataset/neff_test_param.npz']:
+for file_name in ['dataset/neff_train_param.npz','dataset/neff_val_param.npz', 'dataset/neff_test_param.npz']:
     data = np.load(file_name)
     tt = []
     ll = []
+    
+    range_ = range(len(data["omega_b"]))
 
-    for i in range(len(data["omega_b"][args.start:args.end])):
+    for i in range(range_):
       
         common_settings = {
             'h': data['h'][i],
@@ -29,14 +31,14 @@ for file_name in ['dataset/neff_train_param.npz']: # 'dataset/neff_val_param.npz
             'output': 'tCl'
         }
 
-        io.cprint('Computing %d/%d' % (i + 1, len(data["omega_b"])))
-        cosmo = Class()  # 创建Class实例
+        io.cprint('Computing %d/%d' % (i + 1, range_))
+        cosmo = Class() 
         cosmo.set(common_settings)
         cosmo.compute()
         
         cl = cosmo.raw_cl(2500)
-        tt.append(cl['tt'][2:])  # 提取tt模式
-        ll.append(cl['ell'][2:])  # 提取ell模式
+        tt.append(cl['tt'][2:])  
+        ll.append(cl['ell'][2:]) 
         
         cosmo.struct_cleanup()
         cosmo.empty()
@@ -44,5 +46,5 @@ for file_name in ['dataset/neff_train_param.npz']: # 'dataset/neff_val_param.npz
 
     tt = np.array(tt)
     ll = np.array(ll)
-    output_file = file_name.replace('param', 'tt_{}'.format(args.start))
+    output_file = file_name.replace('param', 'tt')
     np.savez(output_file, features=np.log(tt), modes=ll)

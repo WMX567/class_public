@@ -54,6 +54,8 @@ def split_combined_data(combined_data, train_frac=0.75, val_frac=0.10):
     
     # Shuffle the indices
     np.random.shuffle(indices)
+    np.random.shuffle(indices)
+    np.random.shuffle(indices)
     
     # Calculate the number of samples for each set
     train_size = int(train_frac * total_samples)
@@ -63,7 +65,7 @@ def split_combined_data(combined_data, train_frac=0.75, val_frac=0.10):
     val_indices = indices[train_size:train_size + val_size]
     test_indices = indices[train_size + val_size:]
     
-    train_data_split = combined_data[train_indices]
+    train_data_split = combined_data[train_indices[:42614]]
     val_data_split = combined_data[val_indices]
     test_data_split = combined_data[test_indices]
     

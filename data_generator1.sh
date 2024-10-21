@@ -10,5 +10,4 @@ module load miniconda-nobashrc
 eval "$(conda shell.bash hook)"
 conda activate pyCLGL
 
-python lhs_sampling.py
-python call_class.py --start 0 --end 393216
+python call_class.py --start 393216 --end 786432
