@@ -11,12 +11,12 @@ args = parser.parse_args()
 
 io = log.IOStream()
 
-for file_name in ['dataset/neff_test_param.npz']:
+for file_name in ['dataset/neff_train_param.npz', 'dataset/neff_test_param.npz']:
     data = np.load(file_name)
     tt = []
     ll = []
     
-    range_ = len(data["omega_b"][:9531])
+    range_ = len(data["omega_b"])
 
     for i in range(range_):
       
