@@ -1,6 +1,6 @@
 import numpy as np
 import log
-from classy import Class  # 确保你已经导入Class库
+from classy import Class
 import argparse
 
 
@@ -11,12 +11,12 @@ args = parser.parse_args()
 
 io = log.IOStream()
 
-for file_name in ['dataset/neff_train_param.npz','dataset/neff_val_param.npz', 'dataset/neff_test_param.npz']:
+for file_name in ['dataset/neff_test_param.npz']:
     data = np.load(file_name)
     tt = []
     ll = []
     
-    range_ = len(data["omega_b"])
+    range_ = len(data["omega_b"][:9531])
 
     for i in range(range_):
       
