@@ -67,7 +67,7 @@ def split_combined_data(combined_data, train_frac=0.75, val_frac=0.10):
     
     train_data_split = combined_data[train_indices[:42614]]
     val_data_split = combined_data[val_indices]
-    test_data_split = combined_data[test_indices]
+    test_data_split = combined_data[test_indices[:9531]]
     
     return train_data_split, val_data_split, test_data_split
 
