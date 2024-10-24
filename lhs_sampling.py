@@ -107,7 +107,7 @@ np.savez(val_path,
          tau_reio=val_data['tau_reio'],
          n_s=val_data['n_s'],
          ln_A_s_1e10=val_data['ln_A_s_1e10'],
-         N_eff=val_data['N_eff'])
+         N_eff=val_data['N_ur'])
 
 # Save test data
 test_data = np.load(test_path)
@@ -118,4 +118,5 @@ np.savez(test_path,
          tau_reio=test_data['tau_reio'],
          n_s=test_data['n_s'],
          ln_A_s_1e10=test_data['ln_A_s_1e10'],
-         N_ur=test_data['N_eff'])
+         N_ur=test_data['N_ur'])
+
