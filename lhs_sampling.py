@@ -98,9 +98,8 @@ test_path = 'dataset/neff_test_param.npz'
 #          ln_A_s_1e10=train_data['ln_A_s_1e10'],
 #          N_eff=train_data['N_eff'])
 
-val_data = np.load(val_path)
-
 # Save validation data
+val_data = np.load(val_path)
 np.savez(val_path, 
          omega_b=val_data['omega_b'],
          omega_cdm=val_data['omega_cdm'],
@@ -110,9 +109,8 @@ np.savez(val_path,
          ln_A_s_1e10=val_data['ln_A_s_1e10'],
          N_eff=val_data['N_eff'])
 
-test_data = np.load(val_path)
-
 # Save test data
+test_data = np.load(test_path)
 np.savez(test_path, 
          omega_b=test_data['omega_b'],
          omega_cdm=test_data['omega_cdm'],
